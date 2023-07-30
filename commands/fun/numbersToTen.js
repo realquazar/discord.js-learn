@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
-  name: 'num',
+  name: 'num10',
   description: 'prints numbers from 1 to 10',
 
   async execute(interaction) {
