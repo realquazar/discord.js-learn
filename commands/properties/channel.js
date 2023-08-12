@@ -20,6 +20,14 @@ module.exports = {
 
     const channelMatch = channelArgument.match(/<#(\d+)>/);
     let targetChannel;
+
+    if (channelMatch) {
+      const channelId = channelMatch[1];
+      targetChannel = interaction.guild.channels.cache.get(channelId);
+    }
+    else {
+      targerChannel = interaction.guild.channels.cache.find(channel => channel.name === channelArgument);
+    }
   }
   
 }
