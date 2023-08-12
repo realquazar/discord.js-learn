@@ -28,6 +28,18 @@ module.exports = {
     else {
       targerChannel = interaction.guild.channels.cache.find(channel => channel.name === channelArgument);
     }
-  }
-  
-}
+
+    if (!targetChannel) {
+      return interaction.reply(`Channel ${channelArgument} not found`);
+    }
+
+    try {
+      await targetChannel.send(messageContent);
+      await interaction.reply(`Message sent to <#${targetChannel.id}>`);
+    }
+    catch (error) {
+      console.error('An error occurred:', error);
+      await interaction.reply('An error occurred while sending the message');
+    }
+  } 
+};
