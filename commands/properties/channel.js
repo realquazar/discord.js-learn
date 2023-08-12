@@ -18,7 +18,8 @@ module.exports = {
     const channelArgument = interaction.options.getString('channel');
     const messageContent = interaction.options.getString('message');
 
-    const channelMatch = channelArgument.match(/<#(\d+)>/)
+    const channelMatch = channelArgument.match(/<#(\d+)>/);
+    let targetChannel;
   }
   
 }
