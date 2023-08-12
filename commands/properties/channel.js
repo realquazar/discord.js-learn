@@ -17,6 +17,8 @@ module.exports = {
   async execute(interaction) {
     const channelArgument = interaction.options.getString('channel');
     const messageContent = interaction.options.getString('message');
+
+    const channelMatch = channelArgument.match(/<#(\d+)>/)
   }
   
 }
