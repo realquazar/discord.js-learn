@@ -8,7 +8,15 @@ module.exports = {
     option.setName('channel')
       .setDescription('Channel to send the message')
       .setRequired(true)
+  )
+  .addStringOption(option => 
+    option.setName('message')
+    .setDescription('Message to be sent')
+    .setRequired(true)
   ),
-  async execute(interaction) {}
+  async execute(interaction) {
+    const channelArgument = interaction.options.getString('channel');
+    const messageContent = interaction.options.getString('message');
+  }
   
 }
