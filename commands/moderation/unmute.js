@@ -10,8 +10,8 @@ module.exports = {
       .setRequired(true)
   ),
   async execute(interaction) {
-    let user = interaction.options.getUser('user');
-    let member = interaction.guild.members.fetch(user.id);
+    let user = interaction.options.getMember('user');
+    let member = await interaction.guild.members.fetch(user.id);
 
     if (!user) {
       return interaction.reply('User not found');
